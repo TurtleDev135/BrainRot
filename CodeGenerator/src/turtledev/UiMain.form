@@ -27,13 +27,26 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="startButton" min="-2" max="-2" attributes="0"/>
-                  <Component id="stopButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="controlsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="statusLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="generatedIndicator" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="controlsLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="configLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="stopButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="statusLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="generatedIndicator" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="startButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                      <Component id="linesInput" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -41,9 +54,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="controlsLabel" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="controlsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="configLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="startButton" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="startButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="linesInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="stopButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -88,6 +107,16 @@
     <Component class="javax.swing.JLabel" name="generatedIndicator">
       <Properties>
         <Property name="text" type="java.lang.String" value="Lines Generated"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="configLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Config"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="linesInput">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lines to Generate"/>
       </Properties>
     </Component>
   </SubComponents>
