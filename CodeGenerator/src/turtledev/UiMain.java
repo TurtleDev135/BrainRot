@@ -10,6 +10,8 @@ package turtledev;
  */
 public class UiMain extends javax.swing.JFrame {
 
+    CodeGenerator gen = new CodeGenerator();
+
     /**
      * Creates new form UiMain
      */
@@ -111,7 +113,7 @@ public class UiMain extends javax.swing.JFrame {
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         // TODO add your handling code here:
-        System.out.println(evt);
+
     }//GEN-LAST:event_startButtonActionPerformed
 
     private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopButtonActionPerformed
