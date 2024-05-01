@@ -1,9 +1,7 @@
 package turtledev;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import javax.swing.*;
+import java.io.*;
 import java.util.Scanner;
 
 public class CodeGenerator {
@@ -13,15 +11,18 @@ public class CodeGenerator {
         this.linesGenerated = 0;
     }
 
-    public void start(String path) {
+    public void generateLines(String path, int numLines, JLabel callback) {
         try {
             linesGenerated = getCurrentFileLength(path);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+
+        //begin writing
         try {
-            Scanner scanner = new Scanner(new File(path));
+            FileWriter fw = new FileWriter(path);
+            
 
             
         } catch (Exception e) {
