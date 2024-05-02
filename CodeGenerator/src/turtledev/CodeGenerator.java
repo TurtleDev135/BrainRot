@@ -35,15 +35,15 @@ public class CodeGenerator {
             if (linesGenerated == 0) {
                 fw.write(
                         "while True: \n" +
-                        indent() + "input = str(input(\"Enter a number: \"))\n"
+                        indent() + "inp = int(input(\"Enter a number: \"))\n"
                 );
                 linesGenerated=2;
             }
             for (int i = 0; i < numLines; i++) {
-                fw.write(indent()+"if input == " + numbersAccounted + ":\n");
+                fw.write(indent()+"if inp == " + numbersAccounted + ":\n");
                 numbersAccounted++;
                 fw.write(indent()+indent()+"print(\"Even\")\n");
-                fw.write(indent()+"if input == " + numbersAccounted + ":\n");
+                fw.write(indent()+"if inp == " + numbersAccounted + ":\n");
                 numbersAccounted++;
                 fw.write(indent()+indent()+"print(\"Odd\")\n");
                 //after each line is written
