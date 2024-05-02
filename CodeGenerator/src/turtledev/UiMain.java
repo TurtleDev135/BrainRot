@@ -4,6 +4,8 @@
  */
 package turtledev;
 
+import static java.lang.Integer.parseInt;
+
 /**
  *
  * @author cjain
@@ -30,7 +32,6 @@ public class UiMain extends javax.swing.JFrame {
 
         controlsLabel = new javax.swing.JLabel();
         startButton = new javax.swing.JButton();
-        stopButton = new javax.swing.JButton();
         statusLabel = new javax.swing.JLabel();
         generatedIndicator = new javax.swing.JLabel();
         configLabel = new javax.swing.JLabel();
@@ -41,17 +42,10 @@ public class UiMain extends javax.swing.JFrame {
 
         controlsLabel.setText("Controls");
 
-        startButton.setText("Start");
+        startButton.setText("Generate");
         startButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startButtonActionPerformed(evt);
-            }
-        });
-
-        stopButton.setText("Stop");
-        stopButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stopButtonActionPerformed(evt);
             }
         });
 
@@ -61,7 +55,7 @@ public class UiMain extends javax.swing.JFrame {
 
         configLabel.setText("Config");
 
-        linesInput.setText("Lines to Generate");
+        linesInput.setText("Pairs to Generate");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,13 +70,11 @@ public class UiMain extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(configLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(stopButton)
-                            .addComponent(statusLabel))
+                        .addComponent(statusLabel)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(startButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                         .addComponent(linesInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -97,9 +89,7 @@ public class UiMain extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(startButton)
                     .addComponent(linesInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(stopButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(35, 35, 35)
                 .addComponent(statusLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(generatedIndicator)
@@ -113,13 +103,8 @@ public class UiMain extends javax.swing.JFrame {
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         // TODO add your handling code here:
-
+        gen.generateLines("main.py",parseInt(linesInput.getText()),generatedIndicator);
     }//GEN-LAST:event_startButtonActionPerformed
-
-    private void stopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopButtonActionPerformed
-        // TODO add your handling code here:
-        System.out.println(evt);
-    }//GEN-LAST:event_stopButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,6 +148,5 @@ public class UiMain extends javax.swing.JFrame {
     private javax.swing.JTextField linesInput;
     private javax.swing.JButton startButton;
     private javax.swing.JLabel statusLabel;
-    private javax.swing.JButton stopButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,31 +35,42 @@ public class CodeGenerator {
             if (linesGenerated == 0) {
                 fw.write(
                         "while True: \n" +
-                        indent() + "input = str(input(\"Enter a number: \"))"
+                        indent() + "input = str(input(\"Enter a number: \"))\n"
                 );
+                linesGenerated=2;
             }
             for (int i = 0; i < numLines; i++) {
-                fw.write(indent()+"if input == ");
+                fw.write(indent()+"if input == " + numbersAccounted + ":\n");
+                numbersAccounted++;
+                fw.write(indent()+indent()+"print(\"Even\")\n");
+                fw.write(indent()+"if input == " + numbersAccounted + ":\n");
+                numbersAccounted++;
+                fw.write(indent()+indent()+"print(\"Odd\")\n");
                 //after each line is written
-                linesGenerated++;
+                linesGenerated+=4;
                 callback.setText("Lines Generated: " + this.linesGenerated);
             }
+            fw.close();
 
-            
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     private void updateCurrentFileMeta(String path) throws IOException {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(path));
+        } catch (FileNotFoundException e) {
+            return;
+        }
         BufferedReader reader = new BufferedReader(new FileReader(path));
-        String line = "";
+        String line = reader.readLine();;
         while (line != null) {
-            line = reader.readLine();
             linesGenerated++;
             if (line.substring(4,6) == "if") {
                 System.out.println(line.substring(4,6));
             }
+            line = reader.readLine();
         }
         reader.close();
     }
